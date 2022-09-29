@@ -1,10 +1,11 @@
 
 import './App.css';
+import Register from './pages/Registration/Register';
 
 function App() {
   return (
     <>
-      <h2>hello</h2>
+      <Register />
     </>
   );
 }
