@@ -12,12 +12,15 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
+app.use('/api', require('./routes/authRoute'))
+
 const URI = process.env.URI;
 
 mongoose.connect(
   URI,
   { useNewUrlParser:true,
-    useNewUrlParser: true,
+    useUnifiedTopology: true
+    
   },
   (err) => {
     if (err) throw err;
@@ -25,8 +28,6 @@ mongoose.connect(
   }
 );
 
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+
 
 app.listen(port, console.log("server is runing on 5000"));
